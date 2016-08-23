@@ -1,3 +1,4 @@
+azure network nsg rule delete --resource-group HelloWorld --nsg-name HelloWorld-nsg --name HelloWorldInboundHttp-rule --quiet
 azure network nsg rule delete --resource-group HelloWorld --nsg-name HelloWorld-nsg --name HelloWorldInboundSSH-rule --quiet
 azure vm delete --resource-group HelloWorld --name Eve --quiet
 azure storage account delete --resource-group HelloWorld evestorage2 --quiet
