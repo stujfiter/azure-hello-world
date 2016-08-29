@@ -1,7 +1,13 @@
 #! /bin/bash
-ACT=$(curl --silent --max-time 5 http://$1-kearl.eastus.cloudapp.azure.com/hello)
+./start.sh HelloWorld eve
+./provision.sh eve
+sleep 30
+ACT=$(curl --max-time 30 http://eve-kearl.eastus.cloudapp.azure.com/hello)
 if [[ $ACT == "Hello, World!" ]]; then
-	echo "TEST PASSED!"
+	RESULT="TEST PASSED!"
 else
-	echo "TEST FAILED!"
+	RESULT="TEST FAILED!"
 fi
+
+./stop.sh HelloWorld eve
+echo $RESULT
